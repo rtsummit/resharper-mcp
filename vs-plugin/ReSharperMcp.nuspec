@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>rtsummit.ReSharperMcp</id>
+    <version>0.8.1.1</version>
+    <title>MCP Server for Code Intelligence (ReSharper for VS)</title>
+    <authors>Joshua Light, rtsummit</authors>
+    <owners>rtsummit</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://github.com/rtsummit/resharper-mcp/blob/main/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/rtsummit/resharper-mcp</projectUrl>
+    <summary>MCP (Model Context Protocol) server hosted inside ReSharper for Visual Studio.</summary>
+    <description>
+Exposes ReSharper's code intelligence (find_usages, get_symbol_info, search_symbol, flow, ...) to AI assistants via an HTTP MCP server on 127.0.0.1:23741.
+
+This is the Visual Studio (ReSharper) build. For the Rider build see the JetBrains Marketplace listing.
+
+C++ symbol resolution (cpp-enhanced) is included.
+    </description>
+    <releaseNotes>Initial VS/ReSharper package based on Rider 0.8.1-cpp1 backend.</releaseNotes>
+    <copyright>Copyright (c) Joshua Light, rtsummit</copyright>
+    <tags>resharper mcp ai code-intelligence</tags>
+    <dependencies>
+      <dependency id="Wave" version="[253.0]" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\src\ReSharperMcp\bin\Release\net472\ReSharperMcp.dll" target="DotFiles" />
+    <file src="..\src\ReSharperMcp\bin\Release\net472\ReSharperMcp.pdb" target="DotFiles" />
+  </files>
+</package>

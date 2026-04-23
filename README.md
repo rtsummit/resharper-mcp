@@ -81,9 +81,14 @@ Set `RESHARPER_MCP_PORT` environment variable to override the default port.
 # Build the .NET backend
 dotnet build src/ReSharperMcp/ReSharperMcp.csproj -c Release
 
-# Build a distributable plugin ZIP
+# Build a distributable plugin ZIP (Rider)
 ./build-plugin.sh
+
+# Build a .nupkg for ReSharper on Visual Studio 2022
+bash vs-plugin/build-vs-plugin.sh
 ```
+
+For the Visual Studio (ReSharper) build, see [vs-plugin/README.md](vs-plugin/README.md).
 
 ## Architecture
 
