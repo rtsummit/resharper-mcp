@@ -6,10 +6,11 @@ Rider용 `rider-plugin/` 은 JVM `.jar + plugin.xml`, VS용 이 폴더는 NuGet 
 
 ## 요구 사항
 
-- Visual Studio 2022 + **ReSharper 2025.3**(Wave 253)
+- Visual Studio 2022/2026 + **ReSharper 2026.1**(Wave 261)
+  - Wave 253(ReSharper 2025.3) 대상으로 빌드하려면 `ReSharperMcp.nuspec`의 `Wave` 의존성과 `ReSharperMcp.csproj`의 `JetBrains.ReSharper.SDK` 버전을 함께 내려야 한다.
 - 빌드 머신에 `dotnet` CLI, `nuget` CLI (또는 mono + `nuget.exe`)
 
-Wave는 ReSharper의 binary-compat 세대 번호. 2025.3 = 253. ReSharper 버전이 바뀌면 `ReSharperMcp.nuspec`의 `<dependency id="Wave" version="[253.0]" />`와 SDK 버전을 함께 올려 재빌드해야 한다.
+Wave는 ReSharper의 binary-compat 세대 번호. 2025.3 = 253, 2026.1 = 261. **Wave 표기는 반드시 4-segment** (`[261.0.0.0]`) — 2-segment(`[261.0]`)는 파싱에서 "Input string was not in a correct format. offset 14" 에러가 발생하니 주의. ReSharper 버전이 바뀌면 `ReSharperMcp.nuspec`의 `<dependency id="Wave" version="[261.0.0.0]" />`와 `ReSharperMcp.csproj`의 SDK 버전을 함께 올려 재빌드해야 한다.
 
 ## 빌드
 
