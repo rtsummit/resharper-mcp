@@ -93,6 +93,9 @@ namespace ReSharperMcp.Tools
             if (string.IsNullOrEmpty(query))
                 return new { error = "query is required" };
 
+            if (query == "__cpp_dump__") return new { dump = CppHelpers.DumpCppGlobalSymbolCacheMethods(_solution) }; // [CPP-DEV]
+
+
             if (maxResults <= 0) maxResults = 50;
             if (maxResults > 200) maxResults = 200;
 

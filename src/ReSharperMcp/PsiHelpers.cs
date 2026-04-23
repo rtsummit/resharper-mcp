@@ -263,7 +263,11 @@ namespace ReSharperMcp
             }
 
             if (candidates.Count == 0)
+            {
+                var r = CppHelpers.TryResolveSymbolByName(solution, symbolName, kind); // [CPP]
+                if (r != null) return r;
                 return new SymbolResolveResult();
+            }
 
             if (candidates.Count == 1)
                 return new SymbolResolveResult { Element = candidates[0].element };
@@ -436,6 +440,7 @@ namespace ReSharperMcp
                     return (null, new { error = $"No syntax node found at {line}:{column}" });
 
                 var element = GetDeclaredElement(node);
+                if (element == null) element = CppHelpers.TryResolveCppDeclaredElement(node); // [CPP]
                 if (element == null)
                 {
                     // Try to extract reference name for a more helpful error message

@@ -1,7 +1,7 @@
 <idea-plugin require-restart="true">
   <id>com.j-light.resharper-mcp</id>
   <name>MCP Server for Code Intelligence</name>
-  <version>0.8.0</version>
+  <version>0.8.1-cpp1</version>
   <vendor email="j.light.developer@gmail.com" url="https://plugins.jetbrains.com/vendor/j-light">Joshua Light</vendor>
   <idea-version since-build="253" />
   <depends>com.intellij.modules.rider</depends>
